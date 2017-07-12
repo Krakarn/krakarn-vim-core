@@ -2,7 +2,9 @@
 
 A place for my vim config
 
-## Requirements
+## INSTALLATION
 
-- Install cURL
-- Put /krakarn-core.vim in your ~/vimfiles (windows) or ~/.vim (other) folder
+1. Install cURL
+2. Put /krakarn-bootstrap.vim in your .vim folder (default is ~/vimfiles for windows or ~/.vim for other)
+3. Add `runtime krakarn-bootstrap.vim` to your .vimrc
+4. Start vim
