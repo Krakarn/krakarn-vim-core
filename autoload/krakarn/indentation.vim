@@ -11,7 +11,9 @@ function! SetFileIndent(ft, x)
   augroup END
 endf
 
-call SetFileIndent('*', 2)
-call SetFileIndent('*.php', 4)
-
-set expandtab
+function! krakarn#indentation#init()
+  call SetFileIndent('*', 2)
+  call SetFileIndent('*.php', 4)
+  
+  set expandtab
+endfunction
