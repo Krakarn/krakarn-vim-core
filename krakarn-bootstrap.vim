@@ -2,11 +2,7 @@
 
 " Determine paths
 
-if has('win32')
-  let s:vimpath = $HOMEDRIVE . $HOMEPATH . '/vimfiles'
-else
-  let s:vimpath = '~/.vim'
-endif
+let s:vimpath = expand('<sfile>:p:h')
 
 let s:plugpath = s:vimpath . '/autoload/plug.vim'
 let s:depspath = s:vimpath . '/plugged/krakarn-vim-core/plugins.vim'
@@ -35,12 +31,13 @@ function! LoadPlugins(doInit)
 
   if a:doInit
     call krakarn#init()
+    runtime plugin/*.vim
   endif
 endfunction
 
 function! FirstTime(doInit)
   call LoadPlugins(0)
-  PlugInstall --sync | source $MYVIMRC
+  PlugInstall --sync
 
   if s:firsttime
     let s:firsttime = 0
@@ -50,16 +47,23 @@ function! FirstTime(doInit)
 
   if a:doInit
     call krakarn#init()
+    runtime plugin/*.vim
   endif
 endfunction
 
 " Check if vim-plug is not installed and install it if that's the case
 
 if s:firsttime
-  exec '!curl -fLo ' . s:plugpath . ' --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  silent! exec '!curl -fLo ' . s:plugpath . ' --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
   autocmd VimEnter * call FirstTime(1)
 elseif !s:installed
   autocmd VimEnter * call FirstTime(1)
 else
-  call LoadPlugins(1)
+  try
+    call LoadPlugins(1)
+  catch
+    echohl ErrorMsg
+    echo v:exception
+    echohl None
+  endtry
 endif
