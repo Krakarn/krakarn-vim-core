@@ -2,13 +2,26 @@
 
 function! krakarn#basic#init()
   filetype plugin indent on
+
+  " Display 
+
   syntax on
-  
   set relativenumber
   set number
   set list
   set listchars=tab:>-
+
+  " Wild stuff
+
+  set wildmenu
+  set wildmode=list:full
+
+  " Finding files
+
   set ssl
+  set path+=**
+
+  " Color
 
   colorscheme desert
 
@@ -16,6 +29,8 @@ function! krakarn#basic#init()
   
   set encoding=utf-8
   set fileencoding=utf-8
+
+  " Setup GUI initialization
 
   au GUIEnter * :call OnGUIEnter()
 endfunction
