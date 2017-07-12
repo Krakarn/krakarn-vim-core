@@ -26,4 +26,8 @@ Plug 'Quramy/tsuquyomi'
 
 " Source version control
 
-Plug 'tpope/vim-fugitive'
+Plug 'jreybert/vimagit'
+
+" Search
+
+Plug 'szw/vim-g' " Google
