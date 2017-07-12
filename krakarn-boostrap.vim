@@ -39,7 +39,7 @@ function! LoadPlugins(doInit)
 endfunction
 
 function! FirstTime(doInit)
-  call LoadPlugins()
+  call LoadPlugins(0)
   PlugInstall --sync | source $MYVIMRC
 
   if s:firsttime
@@ -49,7 +49,7 @@ function! FirstTime(doInit)
   endif
 
   if a:doInit
-    krakarn#init()
+    call krakarn#init()
   endif
 endfunction
 
