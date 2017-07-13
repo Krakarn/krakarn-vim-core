@@ -28,11 +28,12 @@ function! krakarn#basic#init()
   " Encoding
   
   set encoding=utf-8
-  set fileencoding=utf-8
-
-  " Setup GUI initialization
 
   au GUIEnter * :call OnGUIEnter()
+
+  autocmd VimEnter * NERDTree
+  autocmd VimEnter * wincmd p
+  autocmd VimEnter * nested call OnVimEnter()
 endfunction
 
 " GUI-specific
@@ -41,3 +42,13 @@ function! OnGUIEnter()
   simalt ~x "Maximize window on windows
   set guifont=Lucida_Console:h11
 endf
+
+function! OnVimEnter()
+  if empty(execute('args'))
+    let l:readme = glob('README*')
+
+    if !empty(l:readme)
+      exe 'e ' . l:readme
+    endif
+  endif
+endfunction
