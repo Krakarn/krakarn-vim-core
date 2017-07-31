@@ -12,7 +12,10 @@ Plug 'vim-airline/vim-airline'
 
 " Languages
 
-Plug 'elzr/vim-json'
+ " Syntax & visual help
+Plug 'elzr/vim-json', {'dir': expand(g:vimpath . '/plugged/elzr.vim-json')}
+ " JSON#parse and JSON#stringify
+Plug 'vimlab/vim-json', {'dir': expand(g:vimpath . '/plugged/vimlab.vim-json')}
 Plug 'PProvost/vim-ps1'
 Plug 'leafgarland/typescript-vim'
 Plug 'vim-scripts/rest.vim'

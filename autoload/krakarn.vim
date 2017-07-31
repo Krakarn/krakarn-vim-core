@@ -3,4 +3,5 @@ function! krakarn#init()
   call krakarn#indentation#init()
   call krakarn#keymap#init()
   call krakarn#linters#init()
+  call krakarn#configs#init()
 endfunction
