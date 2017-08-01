@@ -20,6 +20,7 @@ function! krakarn#basic#init()
 
   set ssl
   set path+=**
+  let g:NERDTreeRespectWildIgnore = 1
 
   " Color
 
