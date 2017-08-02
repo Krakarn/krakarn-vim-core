@@ -1,24 +1,19 @@
 " Keymap
 
-function! OpenFuzzyFindWithVimFind()
-  call fzf#run({
-  \ 'source': split(expand('**')),
-  \ 'sink': 'e'
- \})
-endfunction
+function! OpenFuzzyFindWithFileFinder()
 
-" @todo: change system('grep') into some system call that returns all files
-" recursively in the current working path
-function! FZF()
+  let l:system = 'FileFinder-exe -r -e ".*,' . &wildignore . '"'
+
   call fzf#run({
-  \ 'source': split(system('grep')),
+  \ 'source': split(system(l:system)),
   \ 'sink': 'e'
  \})
+
 endfunction
 
 function! krakarn#keymap#init()
 
   nnoremap <C-LeftMouse> <LeftMouse>:tselect <C-R><C-W><CR>
-  nnoremap <C-P> :call OpenFuzzyFindWithVimFind()<CR>
+  nnoremap <C-P> :call OpenFuzzyFindWithFileFinder()<CR>
 
 endfunction
