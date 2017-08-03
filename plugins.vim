@@ -1,16 +1,18 @@
-" Plugins
+" # Plugins
 
-" Filesystem
+" # Filesystem
 
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': 'install --all'}
 Plug 'junegunn/fzf.vim'
 
-" Statusline
+" ## Editing
+
+" ### Statusline
 
 Plug 'vim-airline/vim-airline'
 
-" Languages
+" ### Languages
 
  " Syntax & visual help
 Plug 'elzr/vim-json', {'dir': expand(g:vimpath . '/plugged/elzr.vim-json')}
@@ -20,17 +22,21 @@ Plug 'PProvost/vim-ps1'
 Plug 'leafgarland/typescript-vim'
 Plug 'vim-scripts/rest.vim'
 
-" Linters
+" ### Linters
 
 Plug 'vim-syntastic/syntastic'
 Plug 'Shutnik/jshint2.vim'
 Plug 'gcorne/vim-sass-lint'
 Plug 'Quramy/tsuquyomi'
 
-" Source version control
+" ### Autocompletion
+
+Plug 'ervandew/supertab'
+
+" ## Source version control
 
 Plug 'jreybert/vimagit'
 
-" Search
+" ## Search
 
 Plug 'szw/vim-g' " Google
