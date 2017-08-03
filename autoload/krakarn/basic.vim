@@ -30,6 +30,10 @@ function! krakarn#basic#init()
   
   set encoding=utf-8
 
+  " Supertab
+
+  let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+
   au GUIEnter * :call OnGUIEnter()
 
   autocmd VimEnter * NERDTree
