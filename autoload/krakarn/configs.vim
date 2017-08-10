@@ -20,6 +20,33 @@ function! EchoException()
   call LogError(v:throwpoint . ": " . v:exception)
 endfunction
 
+function! MassageGitIgnoreEntry(i, str)
+  " Remove comment
+  let l:sub = substitute(a:str, '\(\s*#.*\)$', '', 'g')
+
+  " Remove slashes in the beginning of the ignore setting to make it
+  " vim-compatible
+  let l:sub = substitute(l:sub, '^\(\s*[\\\/]\)', '', '')
+  return l:sub
+endfunction
+
+function! IsNotEmpty(i, str)
+  return len(a:str) > 0
+endfunction
+
+function! GetGitIgnore()
+  let l:gitignore = ''
+
+  if filereadable('./.gitignore')
+    let l:gitignore = readfile('./.gitignore')
+    let l:gitignore = map(l:gitignore, function('MassageGitIgnoreEntry'))
+    let l:gitignore = filter(l:gitignore, function('IsNotEmpty'))
+    let l:gitignore = join(l:gitignore, ',')
+  endif
+
+  return l:gitignore
+endfunction
+
 function! krakarn#configs#init()
   try
 
@@ -50,18 +77,17 @@ function! krakarn#configs#init()
         " File ignore
         if exists("s:config.ignore")
           call Log('Adding to wildignore: ' . s:config.ignore)
-          let &wildignore = s:config.ignore . ',' . &wildignore
-        endif
-
-        if filereadable('./.gitignore')
-          let l:gitignore = join(readfile('./.gitignore'), ',')
-
-          call Log('Adding to wildignore: ' . l:gitignore)
-          let &wildignore = l:gitignore . ',' . &wildignore
+          execute 'set wildignore=' . s:config.ignore
         endif
       endif
 
     endif
+
+    call Log('Parsed content for .gitignore:')
+    let l:gitignore = GetGitIgnore()
+    call Log(l:gitignore)
+    call Log('Adding to wildignore: ' . l:gitignore)
+    execute 'set wildignore+=' . l:gitignore
 
   catch
 

@@ -37,6 +37,6 @@ Plug 'ervandew/supertab'
 
 Plug 'jreybert/vimagit'
 
-" ## Search
+" ### Google
 
-Plug 'szw/vim-g' " Google
+Plug 'szw/vim-g'
