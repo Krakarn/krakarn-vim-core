@@ -24,9 +24,10 @@ function! MassageGitIgnoreEntry(i, str)
   " Remove comment
   let l:sub = substitute(a:str, '\(\s*#.*\)$', '', 'g')
 
-  " Remove slashes in the beginning of the ignore setting to make it
+  " Remove slashes in the beginning and end of the ignore setting to make it
   " vim-compatible
   let l:sub = substitute(l:sub, '^\(\s*[\\\/]\)', '', '')
+  let l:sub = substitute(l:sub, '\(\/\s*\)$', '', '')
   return l:sub
 endfunction
 
