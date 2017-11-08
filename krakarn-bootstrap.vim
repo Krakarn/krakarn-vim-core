@@ -2,10 +2,10 @@
 
 " Determine paths
 
-let s:vimpath = expand('<sfile>:p:h')
+let g:vimpath = expand('<sfile>:p:h')
 
-let s:plugpath = s:vimpath . '/autoload/plug.vim'
-let s:depspath = s:vimpath . '/plugged/krakarn-vim-core/plugins.vim'
+let s:plugpath = g:vimpath . '/autoload/plug.vim'
+let s:depspath = g:vimpath . '/plugged/krakarn-vim-core/plugins.vim'
 
 if has('win32')
   let s:plugpath = substitute(s:plugpath, '/', '\\', 'g')

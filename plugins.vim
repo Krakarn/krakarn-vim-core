@@ -21,6 +21,7 @@ Plug 'vimlab/vim-json', {'dir': expand(g:vimpath . '/plugged/vimlab.vim-json')}
 Plug 'PProvost/vim-ps1'
 Plug 'leafgarland/typescript-vim'
 Plug 'vim-scripts/rest.vim'
+Plug 'purescript-contrib/purescript-vim'
 
 " ### Linters
 
