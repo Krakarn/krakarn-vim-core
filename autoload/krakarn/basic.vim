@@ -32,8 +32,6 @@ function! krakarn#basic#init()
 
   " Supertab
 
-  let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
-
   au GUIEnter * :call OnGUIEnter()
 
   autocmd VimEnter * NERDTree

@@ -26,7 +26,6 @@ Plug 'vim-scripts/rest.vim'
 
 Plug 'vim-syntastic/syntastic'
 Plug 'Shutnik/jshint2.vim'
-Plug 'gcorne/vim-sass-lint'
 Plug 'Quramy/tsuquyomi'
 
 " ### Autocompletion
