@@ -27,7 +27,6 @@ Plug 'purescript-contrib/purescript-vim'
 
 Plug 'vim-syntastic/syntastic'
 Plug 'Shutnik/jshint2.vim'
-Plug 'gcorne/vim-sass-lint'
 Plug 'Quramy/tsuquyomi'
 Plug 'FrigoEU/psc-ide-vim'
 
