@@ -34,7 +34,6 @@ function! krakarn#basic#init()
 
   au GUIEnter * :call OnGUIEnter()
 
-  autocmd VimEnter * wincmd p
   autocmd VimEnter * nested call OnVimEnter()
 endfunction
 
