@@ -2,7 +2,7 @@
 
 " # Filesystem
 
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': 'install --all'}
 Plug 'junegunn/fzf.vim'
 
