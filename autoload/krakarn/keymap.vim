@@ -21,6 +21,22 @@ function! OpenFuzzyFindWithFileFinder(path)
 
 endfunction
 
+function! HandleFuzzyFindWithBufferResult(result)
+  let l:line = split(a:result, ':')[0]
+  :execute l:line
+endfunction
+
+function! OpenFuzzyFindWithBuffer()
+
+  let l:filefinder = GetCurrentBufferLines()
+
+  call fzf#run({
+  \ 'source': l:filefinder,
+  \ 'sink': function('HandleFuzzyFindWithBufferResult')
+ \})
+
+endfunction
+
 function! CallFZF(query, path)
   let l:filefinder = join(FileFinder(a:path), "\n")
   return split(system("echo " . l:filefinder . " | fzf --filter=\"" . a:query . "\" --sync"))
@@ -44,5 +60,6 @@ function! krakarn#keymap#init()
   nnoremap <C-LeftMouse> <LeftMouse>:tselect <C-R><C-W><CR>
   nnoremap <C-P> :call OpenFuzzyFindWithFileFinder('.')<CR>
   nnoremap ð :FileFinder 
+  nnoremap <C-S-N> :call OpenFuzzyFindWithBuffer()<CR>
 
 endfunction
