@@ -22,6 +22,7 @@ Plug 'PProvost/vim-ps1'
 Plug 'leafgarland/typescript-vim'
 Plug 'vim-scripts/rest.vim'
 Plug 'purescript-contrib/purescript-vim'
+Plug 'wilsaj/chuck.vim'
 
 " ### Linters
 

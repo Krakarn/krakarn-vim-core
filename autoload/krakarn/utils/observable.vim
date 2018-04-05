@@ -1,4 +1,8 @@
-"Observable
+function! krakarn#utils#observable#load()
+  call krakarn#utils#pure#load()
+  call krakarn#utils#observable#operators#load()
+endfunction
+
 function! CreateObservable(handleObserver)
   let l:observable = {
       \  'handleObserver': a:handleObserver,
@@ -207,8 +211,3 @@ function! Unsubscribe(subscription)
   let a:subscription['observable']['subscriptions'] = ListFilter({s -> s isnot a:subscription}, a:subscription['observable']['subscriptions'])
   call a:subscription['onDestroy'](v:null)
 endfunction
-
-function! krakarn#observable#init()
-  call krakarn#observable#operators#init()
-endfunction
-

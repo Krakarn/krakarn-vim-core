@@ -1,10 +1,13 @@
-function! krakarn#init()
-  " Libs
-  " call krakarn#pure#init()
-  " call krakarn#observable#init()
-  call krakarn#buffer#init()
+function! krakarn#load()
+  call krakarn#basic#load()
+  call krakarn#indentation#load()
+  call krakarn#keymap#load()
+  call krakarn#linters#load()
+  call krakarn#autocomplete#load()
+  call krakarn#configs#load()
+endfunction
 
-  " Config
+function! krakarn#init()
   call krakarn#basic#init()
   call krakarn#indentation#init()
   call krakarn#keymap#init()

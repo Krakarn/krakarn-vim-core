@@ -1,4 +1,5 @@
-" Configs
+function! krakarn#configs#load()
+endfunction
 
 let s:debug = 0
 

@@ -1,3 +1,6 @@
+function! krakarn#utils#observable#operators#load()
+endfunction
+
 function! OperatorMap(observable, f)
   return CreateObservable({observer -> OperatorMapHandleObserver(a:observable, observer, a:f)})
 endfunction
@@ -41,6 +44,3 @@ let g:Operator = {
       \  'map': function('OperatorMap'),
       \  'take': function('OperatorTake'),
       \}
-
-function! krakarn#observable#operators#init()
-endfunction
