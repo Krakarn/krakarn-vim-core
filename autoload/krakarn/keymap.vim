@@ -8,7 +8,7 @@ function! krakarn#keymap#init()
   nnoremap <C-P> :call OpenFuzzyFindWithFileFinder('.')<CR>
   nnoremap ð :FileFinder 
   nnoremap <C-S-B> :call OpenFuzzyFindWithBuffer()<CR>
-  nnoremap <C-S-M> :call FZFRun(GetMergeConflicts(), 'e')<CR>
+  nnoremap <C-S-C> :call FZFRun(GetMergeConflicts(), 'e')<CR>
 
   command! -nargs=1 -complete=customlist,FZFComplete FileFinder call OpenFuzzyFindWithFileFinder('<args>')
 endfunction

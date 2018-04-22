@@ -26,7 +26,8 @@ Plug 'wilsaj/chuck.vim'
 
 " ### Linters
 
-Plug 'vim-syntastic/syntastic'
+Plug 'w0rp/ale'
+" Plug 'vim-syntastic/syntastic'
 Plug 'Shutnik/jshint2.vim'
 Plug 'Quramy/tsuquyomi'
 Plug 'FrigoEU/psc-ide-vim'
