@@ -1,3 +1,6 @@
+function! krakarn#utils#buffer#load()
+endfunction
+
 function! CreateScratchBuffer(...)
   new
   setlocal buftype=nofile bufhidden=hide noswapfile
@@ -31,7 +34,4 @@ function! CreateBufferFromCurrent()
   let l:lines = GetCurrentBufferLines()
   call CreateBuffer(l:lines)
   execute "setlocal filetype=".l:ft
-endfunction
-
-function! krakarn#buffer#init()
 endfunction

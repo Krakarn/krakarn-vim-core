@@ -1,65 +1,14 @@
-" Keymap
-
-function! GetFileFinderSystemString(path)
-  return 'FileFinder-exe ' . a:path . ' -r -e ".*,' . &wildignore . '"'
+function! krakarn#keymap#load()
+  call krakarn#utils#fzf#load()
+  call krakarn#utils#git#load()
 endfunction
-
-function! FileFinder(path)
-  let l:system = GetFileFinderSystemString(a:path)
-
-  return split(system(l:system))
-endfunction
-
-function! OpenFuzzyFindWithFileFinder(path)
-
-  let l:filefinder = FileFinder(a:path)
-
-  call fzf#run({
-  \ 'source': l:filefinder,
-  \ 'sink': 'e'
- \})
-
-endfunction
-
-function! HandleFuzzyFindWithBufferResult(result)
-  let l:line = split(a:result, ':')[0]
-  :execute l:line
-endfunction
-
-function! OpenFuzzyFindWithBuffer()
-
-  let l:filefinder = GetCurrentBufferLines()
-
-  call fzf#run({
-  \ 'source': l:filefinder,
-  \ 'sink': function('HandleFuzzyFindWithBufferResult')
- \})
-
-endfunction
-
-function! CallFZF(query, path)
-  let l:filefinder = join(FileFinder(a:path), "\n")
-  return split(system("echo " . l:filefinder . " | fzf --filter=\"" . a:query . "\" --sync"))
-endfunction
-
-function! FZFComplete(ArgLead, CmdLine, CursorPos)
-  return CallFZF(a:ArgLead, '.')
-endfunction
-
-function! OpenFZFBuffer()
-  bad FZF
-  wincmd v
-  wincmd l
-  buffer FZF
-endfunction
-
-command! -nargs=1 -complete=customlist,FZFComplete FileFinder call OpenFuzzyFindWithFileFinder('<args>')
 
 function! krakarn#keymap#init()
-
   nnoremap <C-LeftMouse> <LeftMouse>:tselect <C-R><C-W><CR>
   nnoremap <C-P> :call OpenFuzzyFindWithFileFinder('.')<CR>
   nnoremap ð :FileFinder 
-  nnoremap <C-S-N> :call OpenFuzzyFindWithBuffer()<CR>
+  nnoremap <C-S-B> :call OpenFuzzyFindWithBuffer()<CR>
+  nnoremap <C-S-C> :call FZFRun(GetMergeConflicts(), 'e')<CR>
 
+  command! -nargs=1 -complete=customlist,FZFComplete FileFinder call OpenFuzzyFindWithFileFinder('<args>')
 endfunction

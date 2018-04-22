@@ -1,4 +1,20 @@
-" Basic
+function! krakarn#basic#load()
+endfunction
+
+function! OnGUIEnter()
+  simalt ~x "Maximize window on windows
+  set guifont=Lucida_Console:h11
+endf
+
+function! OnVimEnter()
+  if empty(execute('args'))
+    let l:readme = glob('README*')
+
+    if !empty(l:readme)
+      exe 'e ' . l:readme
+    endif
+  endif
+endfunction
 
 function! krakarn#basic#init()
   filetype plugin indent on
@@ -35,21 +51,4 @@ function! krakarn#basic#init()
   au GUIEnter * :call OnGUIEnter()
 
   autocmd VimEnter * nested call OnVimEnter()
-endfunction
-
-" GUI-specific
-
-function! OnGUIEnter()
-  simalt ~x "Maximize window on windows
-  set guifont=Lucida_Console:h11
-endf
-
-function! OnVimEnter()
-  if empty(execute('args'))
-    let l:readme = glob('README*')
-
-    if !empty(l:readme)
-      exe 'e ' . l:readme
-    endif
-  endif
 endfunction

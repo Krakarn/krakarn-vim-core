@@ -1,4 +1,5 @@
-" Pure
+function! krakarn#utils#pure#load()
+endfunction
 
 function! Id(x)
   return a:x
@@ -284,6 +285,3 @@ let g:Maybe.of       = {x -> Just(x)}
 let g:Maybe.zero     = Const(Nothing)
 let g:Maybe.chain    = {fm, m -> m is g:Nothing ? g:Nothing : fm(FromJust(m))}
 let g:Maybe.traverse = {ftx, m -> m is g:Nothing ? g:Nothing : Eval(g:Map, function('Just'), ftx(FromJust(m)))}
-
-function! krakarn#pure#init()
-endfunction

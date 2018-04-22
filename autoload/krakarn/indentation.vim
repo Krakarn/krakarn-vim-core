@@ -1,4 +1,5 @@
-" Indentation
+function! krakarn#indentation#load()
+endfunction
 
 function! SetIndentWidth(x)
   execute 'setl tabstop='.a:x
@@ -14,6 +15,6 @@ endf
 function! krakarn#indentation#init()
   call SetFileIndent('*', 2)
   call SetFileIndent('*.php', 4)
-  
+
   set expandtab
 endfunction

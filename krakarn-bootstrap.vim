@@ -19,6 +19,12 @@ function! LoadDependencies()
   exec 'source ' . s:depspath
 endfunction
 
+function! InitKrakarn()
+  call krakarn#load()
+  call krakarn#init()
+  runtime plugin/*.vim
+endfunction
+
 function! LoadPlugins(doInit)
   call plug#begin()
   Plug 'krakarn/krakarn-vim-core'
@@ -30,8 +36,7 @@ function! LoadPlugins(doInit)
   call plug#end()
 
   if a:doInit
-    call krakarn#init()
-    runtime plugin/*.vim
+    call InitKrakarn()
   endif
 endfunction
 
@@ -46,8 +51,7 @@ function! FirstTime(doInit)
   endif
 
   if a:doInit
-    call krakarn#init()
-    runtime plugin/*.vim
+    call InitKrakarn()
   endif
 endfunction
 
