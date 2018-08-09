@@ -1,10 +1,14 @@
 " # Plugins
 
-" # Filesystem
+" ## Filesystem
 
 Plug 'scrooloose/nerdtree', {'do': 'NERDTreeToggle'}
 Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': 'install --all'}
 Plug 'junegunn/fzf.vim'
+
+" ## Testing
+
+Plug 'junegunn/vader.vim'
 
 " ## Editing
 
@@ -23,13 +27,14 @@ Plug 'leafgarland/typescript-vim'
 Plug 'vim-scripts/rest.vim'
 Plug 'purescript-contrib/purescript-vim'
 Plug 'wilsaj/chuck.vim'
+Plug 'davidbeckingsale/writegood.vim'
 
 " ### Linters
 
 Plug 'w0rp/ale'
 " Plug 'vim-syntastic/syntastic'
 Plug 'Shutnik/jshint2.vim'
-Plug 'Quramy/tsuquyomi'
+"Plug 'Quramy/tsuquyomi'
 Plug 'FrigoEU/psc-ide-vim'
 
 " ### Autocompletion
