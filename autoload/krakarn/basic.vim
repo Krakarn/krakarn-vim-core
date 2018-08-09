@@ -4,6 +4,9 @@ endfunction
 function! OnGUIEnter()
   simalt ~x "Maximize window on windows
   set guifont=Lucida_Console:h11
+  set guioptions-=m " Remove gui main menu
+  set guioptions-=T " Remove gui toolbar
+  set winaltkeys=no " Disable windows takeover of alt key
 endf
 
 function! OnVimEnter()
@@ -26,6 +29,7 @@ function! krakarn#basic#init()
   set number
   set list
   set listchars=tab:>-
+  set colorcolumn=80
 
   " Wild stuff
 
@@ -34,7 +38,7 @@ function! krakarn#basic#init()
 
   " Finding files
 
-  set ssl
+  set shellslash
   set path+=**
   let g:NERDTreeRespectWildIgnore = 1
 
@@ -46,7 +50,7 @@ function! krakarn#basic#init()
   
   set encoding=utf-8
 
-  " Supertab
+  " GUI
 
   au GUIEnter * :call OnGUIEnter()
 
