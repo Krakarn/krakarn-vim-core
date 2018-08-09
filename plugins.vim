@@ -1,5 +1,9 @@
 " # Plugins
 
+" ## Process
+
+Plug 'Shougo/vimproc'
+
 " ## Filesystem
 
 Plug 'scrooloose/nerdtree', {'do': 'NERDTreeToggle'}
@@ -17,6 +21,8 @@ Plug 'junegunn/vader.vim'
 Plug 'vim-airline/vim-airline'
 
 " ### Languages
+
+Plug 'eagletmt/ghcmod-vim'
 
  " Syntax & visual help
 Plug 'elzr/vim-json', {'dir': expand(g:vimpath . '/plugged/elzr.vim-json')}
@@ -40,6 +46,7 @@ Plug 'FrigoEU/psc-ide-vim'
 " ### Autocompletion
 
 Plug 'ervandew/supertab'
+Plug 'eagletmt/neco-ghc'
 
 " ## Source version control
 
