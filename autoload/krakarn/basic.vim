@@ -19,6 +19,10 @@ function! OnVimEnter()
   endif
 endfunction
 
+function! SearchAndReplace(pattern, replacement)
+  execute '!ag -0 -l ' . a:pattern . ' | xargs -0 sed -ri.bak -e "s/'.a:pattern.'/'.a:replacement.'/g"'
+endfunction
+
 function! krakarn#basic#init()
   filetype plugin indent on
 
