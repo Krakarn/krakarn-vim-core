@@ -34,6 +34,7 @@ Plug 'vim-scripts/rest.vim'
 Plug 'purescript-contrib/purescript-vim'
 Plug 'wilsaj/chuck.vim'
 Plug 'davidbeckingsale/writegood.vim'
+Plug 'posva/vim-vue'
 
 " ### Linters
 

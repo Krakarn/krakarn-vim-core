@@ -9,7 +9,8 @@ function! krakarn#keymap#init()
   call krakarn#contextMenu#init()
 
   nnoremap <C-LeftMouse> <LeftMouse>:tselect <C-R><C-W><CR>
-  nnoremap <C-P> :call OpenFuzzyFindWithFileFinder('.')<CR>
+  "nnoremap <C-P> :call OpenFuzzyFindWithFileFinder('.')<CR>
+  nnoremap <C-P> :call FZFRun(split(system('ag -l'), '\n'), 'e')<CR>
   nnoremap ð :FileFinder 
   nnoremap <C-S-B> :call OpenFuzzyFindWithBuffer()<CR>
   nnoremap <C-S-C> :call FZFRun(GetMergeConflicts(), 'e')<CR>
