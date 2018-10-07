@@ -45,7 +45,8 @@ Plug 'FrigoEU/psc-ide-vim'
 
 " ### Test Coverage
 
-Plug 'ruanyl/coverage.vim'
+"Plug 'ruanyl/coverage.vim'
+Plug 'Krakarn/coverage.vim'
 
 " ### Autocompletion
 
