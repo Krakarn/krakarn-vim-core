@@ -35,14 +35,17 @@ Plug 'purescript-contrib/purescript-vim'
 Plug 'wilsaj/chuck.vim'
 Plug 'davidbeckingsale/writegood.vim'
 Plug 'posva/vim-vue'
+Plug 'jparise/vim-graphql'
 
 " ### Linters
 
 Plug 'w0rp/ale'
-" Plug 'vim-syntastic/syntastic'
 Plug 'Shutnik/jshint2.vim'
-"Plug 'Quramy/tsuquyomi'
 Plug 'FrigoEU/psc-ide-vim'
+
+" ### Test Coverage
+
+Plug 'ruanyl/coverage.vim'
 
 " ### Autocompletion
 
