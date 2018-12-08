@@ -36,12 +36,14 @@ Plug 'wilsaj/chuck.vim'
 Plug 'davidbeckingsale/writegood.vim'
 Plug 'posva/vim-vue'
 Plug 'jparise/vim-graphql'
+Plug 'Quramy/tsuquyomi'
 
 " ### Linters
 
-Plug 'w0rp/ale'
+" Plug 'w0rp/ale'
 Plug 'Shutnik/jshint2.vim'
 Plug 'FrigoEU/psc-ide-vim'
+Plug 'vim-syntastic/syntastic'
 
 " ### Test Coverage
 
