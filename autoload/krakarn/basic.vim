@@ -54,6 +54,10 @@ function! krakarn#basic#init()
   
   set encoding=utf-8
 
+  " Backupcopy
+
+  set backupcopy=yes
+
   " GUI
 
   au GUIEnter * :call OnGUIEnter()
