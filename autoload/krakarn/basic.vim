@@ -34,6 +34,7 @@ function! krakarn#basic#init()
   set list
   set listchars=tab:>-
   set colorcolumn=80
+  set noequalalways
 
   " Wild stuff
 
@@ -48,7 +49,8 @@ function! krakarn#basic#init()
 
   " Color
 
-  colorscheme desert
+  set background=dark
+  colorscheme solarized8_flat
 
   " Encoding
   

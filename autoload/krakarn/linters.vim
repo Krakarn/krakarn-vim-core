@@ -6,6 +6,7 @@ function! krakarn#linters#init()
   let g:syntastic_scss_checkers=["sasslint"]
   let g:syntastic_typescript_checkers=["tsuquyomi", "tslint"]
   let g:tsuquyomi_disable_quickfix = 1
+  let g:tsuquyomi_single_quote_import = 1
   " let g:airline#extensions#ale#enabled = 1
   " let g:ale_linters = {
   "       \  'haskell': ['ghc-mod', 'hlint'],

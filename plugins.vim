@@ -37,6 +37,10 @@ Plug 'davidbeckingsale/writegood.vim'
 Plug 'posva/vim-vue'
 Plug 'jparise/vim-graphql'
 Plug 'Quramy/tsuquyomi'
+Plug 'burner/vim-svelte'
+Plug 'ElmCast/elm-vim'
+Plug 'tjvr/vim-nearley'
+Plug 'lifepillar/vim-solarized8'
 
 " ### Linters
 
