@@ -41,13 +41,16 @@ Plug 'burner/vim-svelte'
 Plug 'ElmCast/elm-vim'
 Plug 'tjvr/vim-nearley'
 Plug 'lifepillar/vim-solarized8'
+Plug 'tikhomirov/vim-glsl'
+Plug 'digitaltoad/vim-pug'
+Plug 'mingchaoyan/vim-shaderlab'
 
 " ### Linters
 
-" Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 Plug 'Shutnik/jshint2.vim'
-Plug 'FrigoEU/psc-ide-vim'
-Plug 'vim-syntastic/syntastic'
+"Plug 'FrigoEU/psc-ide-vim'
+"Plug 'vim-syntastic/syntastic'
 
 " ### Test Coverage
 
@@ -58,6 +61,10 @@ Plug 'Krakarn/coverage.vim'
 
 Plug 'ervandew/supertab'
 Plug 'eagletmt/neco-ghc'
+
+" ## Debugging
+
+Plug 'eliba2/vim-node-inspect'
 
 " ## Source version control
 
